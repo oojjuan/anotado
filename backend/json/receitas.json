@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "categoria": "Bolo",
+        "nome": "Bolo de Chocolate da Maethe",
+        "ingredientes": [
+            "3 ovos",
+            "1 1/2 xícara de açucar",
+            "2 xícaras de farinha de trigo",
+            "1 xícara de cacau (100% ou amargo)",
+            "1/2 xícara de óleo",
+            "1 colher de sopa de fermento em pó",
+            "1 xícara de água quente"
+        ],
+        "modoPreparo": [
+            {
+                "preparo": "MASSA",
+                "etapas": [
+                    "1. Bata os ovos e o açucar e misture",
+                    "2. Adicione o óleo, cacau e farinha",
+                    "3. Quando a massa estiver mais grossa, adicionar a água quente aos poucos",
+                    "4. Após misturar mais um pouco, colocar o fermento em pó",
+                    "5. Coloque a massa na forma untada com manteiga e farinha (ou cacau em pó)",
+                    "6. Coloque no forno pré-aquecido a 180 graus por aprox. 40 minutos"
+                ]
+            },
+            {
+                "preparo": "COBERTURA",
+                "etapas": [
+                    "1. Coloque numa panela a manteiga, leite condensado, creme de leite, o cacau em pó e 150g de chocolate",
+                    "2. Misture um pouco antes de ligar o fogo"
+                ]
+            }
+        ],
+        "tempoAprox": "1 Hora"
+    }
+]

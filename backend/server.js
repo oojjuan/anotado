@@ -1,14 +1,13 @@
-import express from "express"
-import cors from "cors"
+import express from "express";
+import cors from "cors";
+import { router as rotaReceita } from "./routes/receitas.js"
+
 
 const app = express();
 
-app.use(cors());
+app.use(cors({origin: "*"}));
 app.use(express.json());
-
-app.get("/api/hello", (req, res) => {
-    res.json({message: "Servidor Backend ligado"})
-});
+app.use('/receitas', rotaReceita)
 
 const port = 5000;
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
