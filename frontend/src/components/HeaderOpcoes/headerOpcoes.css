@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+.header-opcoes {
+    display: flex;
+    width: 800px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.opcoes-opcao {
+    font-family: 'Margarine';
+    font-size: 2rem;
+    color: #cca300;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.opcoes-opcao p {
+    letter-spacing: 5px;
+}
