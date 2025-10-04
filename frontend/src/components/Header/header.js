@@ -1,5 +1,5 @@
 import './header.css'
-import logo from '../../imgs/LogoEscrita.png'
+import logo from '../../imgs/Logo_Grande.png'
 import HeaderOpcoes from '../HeaderOpcoes/headerOpcoes'
 import { useNavigate } from 'react-router-dom'
 

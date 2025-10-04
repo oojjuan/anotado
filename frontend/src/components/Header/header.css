@@ -5,9 +5,11 @@
     grid-template-rows: 120px;
     justify-items: center;
     align-items: center;
-    background-color: #491c01;
+    background-color: #1A120B;
 }
 
 .header-logo {
-    height: max-content;
+    width: 250px;
+    position: relative;
+    bottom: 10px;
 }

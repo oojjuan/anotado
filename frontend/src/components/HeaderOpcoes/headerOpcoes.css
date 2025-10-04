@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
-
 .header-opcoes {
     display: flex;
+    justify-content: space-between;
     width: 800px;
     padding: 0;
     margin: 0;
@@ -9,13 +8,13 @@
 }
 
 .opcoes-opcao {
-    font-family: 'Margarine';
-    font-size: 2rem;
-    color: #cca300;
-    margin: 0 auto;
+    font-family: 'Alan Sans';
+    font-size: 2.25rem;
+    color: #D5CEA3;
     text-decoration: none;
 }
 
 .opcoes-opcao p {
     letter-spacing: 5px;
+    text-transform: uppercase;
 }

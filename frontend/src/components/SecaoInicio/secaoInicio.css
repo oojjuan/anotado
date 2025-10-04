@@ -1,0 +1,44 @@
+.container-secao {
+    display: flex;
+    gap: 20px;
+    width: 60%;
+    background-color: #3C2A21;
+    padding: 50px;
+
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgb(150, 150, 150);
+    transition-duration: 0.25s;
+}
+
+.container-secao:hover {
+    background-color: #1A120B;
+    padding: 50px 100px;
+}
+
+.secao-img {
+    width: 300px;
+    border-radius: 50%;
+}
+
+.secao-textos {
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+    color: #D5CEA3;
+}
+
+.textos-titulo {
+    font-family: 'Raleway';
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.textos-texto {
+    font-family: 'Alan Sans';
+    font-size: 1.25rem;
+    line-height: 40px;
+}
+
+.reverso {
+    flex-direction: row-reverse;
+}
