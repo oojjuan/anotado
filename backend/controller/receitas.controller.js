@@ -1,4 +1,4 @@
-import { deletarReceita as deleteReceita, getReceitaPorId, getTodasReceitas } from '../services/receitas.js';
+import { deletarReceita, getReceitaPorId, getTodasReceitas } from '../services/receitas.service.js';
 
 export function getReceitas (req, res) {
     try {
@@ -6,6 +6,7 @@ export function getReceitas (req, res) {
         res.send(receitas)
 
     } catch (error) {
+        
         res.send(`Ocorreu um erro!\n${error}`)
     }
 }
@@ -32,7 +33,7 @@ export function deleteReceita (req, res) {
         const receitaId = req.params.id
 
         if(receitaId && Number(receitaId)) {
-            deleteReceita(receitaId)
+            deletarReceita(receitaId)
             res.send("Receita deletado com sucesso!")
         } else {
             res.status(422)

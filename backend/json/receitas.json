@@ -2,15 +2,30 @@
     {
         "id": "1",
         "categoria": "Bolo",
-        "nome": "Bolo de Chocolate da Maethe",
-        "ingredientes": [
-            "3 ovos",
-            "1 1/2 xícara de açucar",
-            "2 xícaras de farinha de trigo",
-            "1 xícara de cacau (100% ou amargo)",
-            "1/2 xícara de óleo",
-            "1 colher de sopa de fermento em pó",
-            "1 xícara de água quente"
+        "nome": "Bolo de Chocolate - Maethe",
+        "listaIngredientes": [
+            {
+                "preparo": "MASSA",
+                "ingredientes": [
+                    "3 ovos",
+                    "1 1/2 xícara de açucar",
+                    "2 xícaras de farinha de trigo",
+                    "1 xícara de cacau (100% ou amargo)",
+                    "1/2 xícara de óleo",
+                    "1 colher de sopa de fermento em pó",
+                    "1 xícara de água quente"
+                ]
+            },
+            {
+                "preparo": "COBERTURA",
+                "ingredientes": [ 
+                    "2 colheres de manteiga",
+                    "1 caixa de leite condensado",
+                    "1 caixa de creme de leite",
+                    "2 colheres de sopa de cacau em pó",
+                    "150g de chocolate"
+                ]
+            }
         ],
         "modoPreparo": [
             {
@@ -32,6 +47,55 @@
                 ]
             }
         ],
-        "tempoAprox": "1 Hora"
+        "tempoAprox": "1:00"
+    },
+    {
+        "id": "2",
+        "categoria": "Bolo",
+        "nome": "Bolo de Cenoura (Paola)",
+        "listaIngredientes": [
+            {
+                "preparo": "MASSA",
+                "ingredientes": [
+                    "2 xícaras de chá de cenoura sem casa picadas grosseiramente",
+                    "1 xícara de chá bem cheia de polvilho doce",
+                    "1 e 1/3 de xícara de chá de farinha de mandioca crua",
+                    "1 e 1/3 de xicara de chá de açúcar refinado",
+                    "150 ml de óleo vegetal",
+                    "1 e 1/2 colher de sopa de fermento em pó",
+                    "raspas de 1 laranja ou mexerica",
+                    "1 colher de chá de essência de baunilha",
+                    "3 ovos de galinha" 
+                ]
+            },
+            {
+                "preparo": "CALDA",
+                "ingredientes": [
+                    "1/3 de xícara de chá de água",
+                    "1/2 xícara de chá de chocolate em pó",
+                    "1/3 de xícara de chá de açúcar refinado",
+                    "1 colher de sopa de manteiga sem sal OU óleo neutro"
+                ]
+            }
+        ],
+        "modoPreparo": [
+            {
+                "preparo": "MASSA",
+                "etapas": [
+                    "1. Bata as cenouras no liquidificador com óleo, ovos, baunilha, raspas de laranja ou mexerica, até virar um creme",
+                    "2. Peneire as farinhas com o fermento e junte ao creme de cenouras, misturando com um fouet até incorporar",
+                    "3. Transfira a massa para a forma untada e leve ao forno pré aquecido a 170° C por 40 a 50 minutos"
+                ]
+            },
+            {
+                "preparo": "CALDA",
+                "etapas": [
+                    "1. Misture em uma panela pequena o açucar, o chocolate em pó, a água e a manteiga",
+                    "2. Leve ao fogo médio para alto até dissolver todo o açucar (aprox. 5 minutos)",
+                    "3. Espere esfriar e despeje em cima do bolo"
+                ]
+            }
+        ],
+        "tempoAprox": "1:30"
     }
 ]

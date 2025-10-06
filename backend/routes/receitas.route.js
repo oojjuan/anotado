@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteReceita, getReceita, getReceitas } from "../controller/receitas.js"
+import { deleteReceita, getReceita, getReceitas } from "../controller/receitas.controller.js"
 
 export const router = Router()
 
