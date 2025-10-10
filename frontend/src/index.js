@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css';
 import Header from './components/Header/header';
 import Inicio from './routes/Inicio/Inicio.js';
+import Receitas from './routes/Receitas/Receitas.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,9 +14,9 @@ root.render(
         <Routes exact path="/">
           <Route path='/' element={<Navigate to="/inicio" replace/>} />
 
-          <Route path='/inicio' element={<Inicio/>} />
+          <Route path='/inicio' element={<Inicio />} />
 
-          <Route path='/receitas' element={"Receitas"}/>
+          <Route path='/receitas' element={<Receitas />}/>
           
           <Route path='/favoritos' element={"Favoritos"}/>
 
