@@ -5,12 +5,3 @@
     width: 100%;
     min-height: 100vh;
 }
-
-.receitas-titulo {
-    color: #3C2A21;
-    font-size: 2.25rem;
-    font-family: 'Alan Sans';
-    font-weight: 300;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-}

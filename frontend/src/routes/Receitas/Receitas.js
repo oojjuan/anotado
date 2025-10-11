@@ -1,10 +1,11 @@
 import Pesquisa from '../../components/Pesquisa/pesquisa'
+import Titulo from '../../components/Titulo/titulo'
 import './Receitas.css'
 
 function Receitas() {
     return (
         <main className='container-receitas'>
-            <h1 className='receitas-titulo'>Receitas</h1>
+            <Titulo fontSize='tamanho-principal' fontColor='fonte-escura' >Receitas</Titulo>
             <Pesquisa />
         </main>
     )

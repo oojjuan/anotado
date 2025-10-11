@@ -5,18 +5,22 @@ import './index.css';
 import Header from './components/Header/header';
 import Inicio from './routes/Inicio/Inicio.js';
 import Receitas from './routes/Receitas/Receitas.js';
+import Receita from './routes/Receitas/Receita.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
         <Header />
-        <Routes exact path="/">
+        <Routes>
           <Route path='/' element={<Navigate to="/inicio" replace/>} />
 
           <Route path='/inicio' element={<Inicio />} />
 
-          <Route path='/receitas' element={<Receitas />}/>
+          <Route path='/receitas'>
+            <Route index element={<Receitas />}/>
+            <Route path=':idReceita' element={<Receita />}/>
+          </Route>
           
           <Route path='/favoritos' element={"Favoritos"}/>
 

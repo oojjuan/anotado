@@ -7,9 +7,9 @@ const headerOpcoes = ['receitas', 'favoritos', 'criar'];
 function HeaderOpcoes() {
     return (
         <ul className='header-opcoes'>
-            { headerOpcoes.map( (opcao) => (
+            { headerOpcoes.map( (opcao, index) => (
                     <Link to={`/${opcao}`} className='opcoes-opcao'>
-                        <li>
+                        <li key={index}>
                             <p>{opcao}</p>
                         </li>
                     </Link>

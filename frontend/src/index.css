@@ -1,18 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --cor-primaria: #1A1208;
+  --cor-secundaria: #3C2A21;
+  --cor-terciaria: #F3E9A7;
+  --cor-fonte-clara: #D5CEA3;
+  --cor-fonte-escura: #311F15;
+  --cor-fundo: #E5E5CB;
+
+  --fonte-titulo: 'Alan Sans';
+  --fonte-textos: 'Raleway';
+  --fonte-enfase: 'Inter';
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #E5E5CB;
+  background-color: var(--cor-fundo);
+  background-image: url('./imgs/fundoBody.png');
 }
 
-/*
-! Paleta de cores
-Cor primária:             #1A120B
-Cor secundária:           #3C2A21
-Cor da fonte (clara):     #D5CEA3
-Cor da fonte (escura):    #3C2A21
-Cor de fundo:             #E5E5CB
-*/

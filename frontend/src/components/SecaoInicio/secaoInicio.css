@@ -2,8 +2,11 @@
     display: flex;
     gap: 20px;
     width: 60%;
-    background-color: #3C2A21;
+    background-color: var(--cor-secundaria);
+    background-image: url('../../imgs/fundoCard_inicio.png');
+    
     padding: 50px;
+    margin: 25px 0;
 
     border-radius: 50px;
     box-shadow: 5px 5px 5px rgb(150, 150, 150);
@@ -11,8 +14,7 @@
 }
 
 .container-secao:hover {
-    background-color: #1A120B;
-    padding: 50px 100px;
+    background-color: var(--cor-primaria);
 }
 
 .secao-img {
@@ -24,17 +26,11 @@
     margin: 0 auto;
     width: 60%;
     text-align: center;
-    color: #D5CEA3;
-}
-
-.textos-titulo {
-    font-family: 'Raleway';
-    font-size: 3rem;
-    font-weight: 500;
+    color: var(--cor-fonte-clara);
 }
 
 .textos-texto {
-    font-family: 'Alan Sans';
+    font-family: var(--fonte-textos);
     font-size: 1.25rem;
     line-height: 40px;
 }

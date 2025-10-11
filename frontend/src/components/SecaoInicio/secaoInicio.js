@@ -1,3 +1,4 @@
+import Titulo from '../Titulo/titulo'
 import './secaoInicio.css'
 
 function SecaoInicio({ direcao = "normal", titulo, texto, imgUrl}) {
@@ -5,7 +6,7 @@ function SecaoInicio({ direcao = "normal", titulo, texto, imgUrl}) {
         <div className={`container-secao ${direcao}`}>
             <img className='secao-img' src={imgUrl} alt='Logo do site' />
             <div className='secao-textos'>
-                <h2 className='textos-titulo'>{titulo}</h2>
+                <Titulo fontSize='tamanho-card--inicio' fontColor='fonte-clara' >{titulo}</Titulo>
                 <p className='textos-texto'>{texto}</p>
             </div>
         </div>

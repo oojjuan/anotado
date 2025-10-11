@@ -8,9 +8,9 @@
 }
 
 .opcoes-opcao {
-    font-family: 'Alan Sans';
+    font-family: var(--fonte-titulo);
     font-size: 2.25rem;
-    color: #D5CEA3;
+    color: var(--cor-fonte-clara);
     text-decoration: none;
 }
 

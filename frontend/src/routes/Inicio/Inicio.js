@@ -2,6 +2,7 @@ import SecaoInicio from '../../components/SecaoInicio/secaoInicio'
 import Imagem1 from '../../imgs/Logo.png'
 import Imagem2 from '../../imgs/LivroReceita.png'
 import './Inicio.css'
+import Titulo from '../../components/Titulo/titulo'
 
 //<> Textos para as seções
 
@@ -21,11 +22,12 @@ const textoSecoes = [
 
 function Inicio() {
     return (
-        <section className="container-inicio">
+        <main className="container-inicio">
+            <Titulo fontSize='tamanho-principal' fontColor='fonte-escura' >Início</Titulo>
             { textoSecoes.map( (secao, index) => (
-                <SecaoInicio direcao={(index % 2 == 0 ? 'normal' : 'reverso')} titulo={secao.titulo} texto={secao.texto} imgUrl={secao.imgUrl}/>
+                <SecaoInicio direcao={(index % 2 === 0 ? 'normal' : 'reverso')} titulo={secao.titulo} texto={secao.texto} imgUrl={secao.imgUrl}/>
             )) }
-        </section>
+        </main>
     )
 }
 
