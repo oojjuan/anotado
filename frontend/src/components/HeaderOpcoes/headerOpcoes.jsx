@@ -8,8 +8,8 @@ function HeaderOpcoes() {
     return (
         <ul className='header-opcoes'>
             { headerOpcoes.map( (opcao, index) => (
-                    <Link to={`/${opcao}`} className='opcoes-opcao'>
-                        <li key={index}>
+                    <Link key={index} to={`/${opcao}`} className='opcoes-opcao'>
+                        <li>
                             <p>{opcao}</p>
                         </li>
                     </Link>

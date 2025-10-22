@@ -1,0 +1,19 @@
+.lista-etapas {
+    width: 80%;
+    min-height: 200px;
+}
+
+.etapas-etapa {
+    font-size: 1.25rem;
+    font-family: var(--fonte-textos);
+    color: var(--cor-fonte-escura);
+    word-spacing: 2px;
+}
+
+.tipo--ingredientes {
+    list-style-type: disc;
+}
+
+.tipo--etapas {
+    list-style-type: decimal;
+}

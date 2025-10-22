@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom'
 import './resultado.css'
-import Titulo from '../Titulo/titulo'
+import Titulo from '../Titulo/titulo.jsx'
 
-function Resultado({ listaResultado, idReceitasExibidas }) {
+function Resultados({ listaResultado, idReceitasExibidas }) {
     if ( listaResultado.length !== 0) {
         return (
         <div className='container-resultados--preenchido'>
             { listaResultado.slice(idReceitasExibidas[0], idReceitasExibidas[1]).map( (receita, index) => (
                 <Link className='resultados-receita' to={`/receitas/${receita.id}`} key={index}>
                     <span className='receita-id'># {receita.id}</span>
-                    <h2 className='receita-nome'>{receita.nome}</h2>
+                    <Titulo
+                        fonteTamanho="1.5"
+                        fonteCor="escuro"
+                        fontePeso="negrito"
+                        fonteFamilia="texto"
+                        fonteFormatacao="maiuscula"
+                    >{receita.nome}</Titulo>
                     <p className='receita-categoria'>{receita.categoria}</p>
                 </Link>
             ))}
@@ -18,12 +24,18 @@ function Resultado({ listaResultado, idReceitasExibidas }) {
     } else {
         return (
             <div className='container-resultados--vazio'>
-                <Titulo fontSize='tamanho-enfase' fontColor='fonte-escura'>
-                    {"Nenhuma receita foi encontrada ;("}
+                <Titulo
+                    fonteTamanho="2.5"
+                    fonteCor="escuro"
+                    fontePeso="negrito"
+                    fonteFamilia="enfase"
+                    fonteFormatacao="maiuscula"
+                >
+                    Nenhuma receita foi encontrada...
                 </Titulo>
             </div>
         )
     }
 }
 
-export default Resultado
+export default Resultados

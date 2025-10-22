@@ -6,6 +6,7 @@
     justify-items: center;
     align-items: center;
     background-color: var(--cor-primaria);
+    background-image: url('../../imgs/fundoHeader.png');
 }
 
 .header-logo {
