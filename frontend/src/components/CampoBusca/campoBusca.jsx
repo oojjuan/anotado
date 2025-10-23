@@ -10,7 +10,6 @@ function CampoBusca({receitas, setReceitasPesquisada}) {
                 const textoInserido = evento.target.value.toLowerCase()
                 if (textoInserido !== "") {
                     const resultadoPesquisa = receitas.filter( (receita) => receita.nome.toLowerCase().includes(textoInserido))
-                    console.log(resultadoPesquisa)
                     setReceitasPesquisada(resultadoPesquisa)
                 } else {
                     setReceitasPesquisada(receitas)

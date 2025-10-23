@@ -3,13 +3,14 @@ import './pesquisa.css'
 import { getReceitas } from '../../services/receitasData.js'
 import Titulo from '../Titulo/titulo.jsx'
 import Resultados from '../Resultados/resultados.jsx'
-import BotoesPaginas from '../BotaoPaginas/botoesPaginas.jsx'
+import BotaoPagina from '../BotaoPagina/botaoPagina.jsx'
 import CampoBusca from '../CampoBusca/campoBusca.jsx'
 
 function Pesquisa() {
+    const cardLimite = 6
+
     const [receitas, setReceitas] = useState([])
     const [receitasPesquisada, setReceitasPesquisada] = useState([])   
-    const cardLimite = 6
     const [idReceitasExibidas, setIdReceitasExibidas] = useState([0, cardLimite])
 
     //* Buscar receitas
@@ -35,7 +36,22 @@ function Pesquisa() {
             >Digite o nome da receita que desejar!</Titulo>
             <CampoBusca receitas={receitas} setReceitasPesquisada={setReceitasPesquisada}/>
             <Resultados listaResultado={receitasPesquisada} idReceitasExibidas={idReceitasExibidas}/>
-            <BotoesPaginas idReceitasExibidas={idReceitasExibidas} setIdReceitasExibidas={setIdReceitasExibidas} receitasPesquisada={receitasPesquisada} cardLimite={6}/>
+            <div className='container-botoes'>
+                <BotaoPagina 
+                    idExibidos={idReceitasExibidas}
+                    setIdExibidos={setIdReceitasExibidas}
+                    listaElementos={receitasPesquisada}
+                    limiteExibicoes={cardLimite}
+                    tipoOperacao="voltar"
+                />
+                <BotaoPagina 
+                    idExibidos={idReceitasExibidas}
+                    setIdExibidos={setIdReceitasExibidas}
+                    listaElementos={receitasPesquisada}
+                    limiteExibicoes={cardLimite}
+                    tipoOperacao="avancar"
+                />
+            </div>
         </section>
     )
 }
