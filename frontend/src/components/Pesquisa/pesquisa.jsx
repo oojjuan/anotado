@@ -1,29 +1,11 @@
-import { useEffect, useState } from 'react'
 import './pesquisa.css'
-import { getReceitas } from '../../services/receitasData.js'
 import Titulo from '../Titulo/titulo.jsx'
 import Resultados from '../Resultados/resultados.jsx'
 import BotaoPagina from '../BotaoPagina/botaoPagina.jsx'
 import CampoBusca from '../CampoBusca/campoBusca.jsx'
 
-function Pesquisa() {
+function Pesquisa({receitas, receitasPesquisadas, setReceitasPesquisadas, idMinReceita, setIdMinReceita}) {
     const cardLimite = 6
-
-    const [receitas, setReceitas] = useState([])
-    const [receitasPesquisada, setReceitasPesquisada] = useState([])   
-    const [idReceitasExibidas, setIdReceitasExibidas] = useState([0, cardLimite])
-
-    //* Buscar receitas
-    useEffect( () => {
-        fetchReceitas()
-    }, [])
-
-    async function fetchReceitas() {
-        const receitasAPI = await getReceitas()
-        setReceitas(receitasAPI)
-        //* Exibe as receitas na página ao carregar
-        setReceitasPesquisada(receitasAPI)
-    }
     
     return (
         <section className='container-pesquisa'>
@@ -34,20 +16,20 @@ function Pesquisa() {
                 fonteFamilia="enfase"
                 fonteFormatacao="maiuscula"
             >Digite o nome da receita que desejar!</Titulo>
-            <CampoBusca receitas={receitas} setReceitasPesquisada={setReceitasPesquisada}/>
-            <Resultados listaResultado={receitasPesquisada} idReceitasExibidas={idReceitasExibidas}/>
+            <CampoBusca receitas={receitas} setReceitasPesquisada={setReceitasPesquisadas}/>
+            <Resultados listaResultado={receitasPesquisadas} minimoReceitasExibidas={idMinReceita} cardLimite={cardLimite}/>
             <div className='container-botoes'>
                 <BotaoPagina 
-                    idExibidos={idReceitasExibidas}
-                    setIdExibidos={setIdReceitasExibidas}
-                    listaElementos={receitasPesquisada}
+                    idMinExibido={idMinReceita}
+                    setIdMinExibido={setIdMinReceita}
+                    qtdElementos={receitasPesquisadas.length}
                     limiteExibicoes={cardLimite}
                     tipoOperacao="voltar"
                 />
                 <BotaoPagina 
-                    idExibidos={idReceitasExibidas}
-                    setIdExibidos={setIdReceitasExibidas}
-                    listaElementos={receitasPesquisada}
+                    idMinExibido={idMinReceita}
+                    setIdMinExibido={setIdMinReceita}
+                    qtdElementos={receitasPesquisadas.length}
                     limiteExibicoes={cardLimite}
                     tipoOperacao="avancar"
                 />

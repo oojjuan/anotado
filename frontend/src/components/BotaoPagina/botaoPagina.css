@@ -1,5 +1,5 @@
 .botoes-botao {
-    height: 100%;
+    height: 75px;
     width: 75px;
     background-color: var(--cor-terciaria);
     background-image: url('../../imgs/setaBotao.png');
@@ -12,13 +12,12 @@
     transition: 0.15s;
 }
 
-
 .invertido {
     transform: rotate(180deg);
 }
 
 .botoes-botao:disabled {
-    background-image: url('../../imgs/setaBotaoDesativado.png');
+    background-image: url('../../imgs/setaBotao_Desativado.png');
     background-color: rgba(97, 93, 65, 0.1);
     border: 2px solid rgba(213, 206, 163, 0.4)
 }
