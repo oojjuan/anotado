@@ -23,9 +23,16 @@ const textoSecoes = [
 function Inicio() {
     return (
         <main className="container-inicio">
-            <Titulo fontSize='tamanho-principal' fontColor='fonte-escura' >Início</Titulo>
+            <Titulo
+                fonteTamanho="2.25"
+                fonteCor="escuro"
+                fontePeso="fino"
+                fonteFamilia="principal"
+                tipoTitulo="principal"
+                fonteFormatacao="maiuscula"
+            >Início</Titulo>
             { textoSecoes.map( (secao, index) => (
-                <SecaoInicio direcao={(index % 2 === 0 ? 'normal' : 'reverso')} titulo={secao.titulo} texto={secao.texto} imgUrl={secao.imgUrl}/>
+                <SecaoInicio key={index} direcao={(index % 2 === 0 ? 'normal' : 'reverso')} titulo={secao.titulo} texto={secao.texto} imgUrl={secao.imgUrl}/>
             )) }
         </main>
     )

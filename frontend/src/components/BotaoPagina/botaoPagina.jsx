@@ -1,6 +1,6 @@
 import './botaoPagina.css'
 
-function BotaoPagina({idMinExibido, setIdMinExibido, qtdElementos, limiteExibicoes, tipoOperacao}) {    
+function BotaoPagina({idMinExibido, setIdMinExibido, qtdElementos, limiteExibicoes, tipoOperacao, tamanho}) {    
     
     function desativado(tipoOperacao) {
         let booleanAtivado        
@@ -17,7 +17,7 @@ function BotaoPagina({idMinExibido, setIdMinExibido, qtdElementos, limiteExibico
     
     return (
         <button 
-            className={tipoOperacao === "voltar" ? "botoes-botao" : "botoes-botao invertido"}
+            className={`botoes-botao ${tamanho}`}
             onClick={() => {
                 switch (tipoOperacao) {
                     case "voltar" :
@@ -34,7 +34,7 @@ function BotaoPagina({idMinExibido, setIdMinExibido, qtdElementos, limiteExibico
                 }
             }}
             disabled={desativado(tipoOperacao)}
-        />
+        >{tipoOperacao === "voltar" ? "<" : ">"}</button>
     )
 }
 

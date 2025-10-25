@@ -1,35 +1,59 @@
 .botoes-botao {
-    height: 75px;
-    width: 75px;
     background-color: var(--cor-terciaria);
-    background-image: url('../../imgs/setaBotao.png');
-    background-size: auto;
-    background-position: 18px 20px;
-    background-repeat: no-repeat;
-        
+    
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-botao);
+
     border: 2px solid var(--cor-secundaria);
     border-radius: 50px;
-    transition: 0.15s;
-}
+    transition: 0.3s ease-out;
 
-.invertido {
-    transform: rotate(180deg);
+    &.grande {
+        height: 150px;
+        width: 150px;
+        font-size: 4rem;
+    }
+
+    &.pequeno {
+        height: 75px;
+        width: 75px;
+        font-size: 2.5rem;
+    }
+
 }
 
 .botoes-botao:disabled {
-    background-image: url('../../imgs/setaBotao_Desativado.png');
     background-color: rgba(97, 93, 65, 0.1);
-    border: 2px solid rgba(213, 206, 163, 0.4)
+    border: 2px solid rgba(213, 206, 163, 0.4);
+    color: rgba(134, 129, 91, 0.1);
+
+    &:hover {
+        color: #af08085f;
+        cursor: initial;
+        background-color: rgba(97, 93, 65, 0.1);
+
+        &.pequeno {
+            box-shadow: 0 0 0 5px #af08085f;
+        }
+
+        &.grande {
+            box-shadow: 0 0 0 10px #af08085f;
+        }
+    }
 }
 
 .botoes-botao:hover {
     cursor: pointer;
-    background-color: #CAC07A;
-}
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    
+    &.pequeno:not(:disabled) {
+        box-shadow: 0 0 0 5px #3c2a215f;
+    }
 
-.botoes-botao:disabled:hover {
-    background-color: rgba(97, 93, 65, 0.1);
-    cursor: initial;
+    &.grande:not(:disabled) {
+        box-shadow: 0 0 0 10px #3c2a215f;
+    }
 }
 
 

@@ -7,14 +7,14 @@
     align-items: center;
     background-color: var(--cor-primaria);
     background-image: url('../../imgs/fundoHeader.png');
-}
 
-.header-logo {
-    width: 250px;
-    position: relative;
-    bottom: 10px;
-}
+    .header-logo {
+        width: 250px;
+        position: relative;
+        bottom: 10px;
 
-.header-logo:hover {
-    cursor: pointer;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }

@@ -25,6 +25,7 @@ function Pesquisa({receitas, receitasPesquisadas, setReceitasPesquisadas, idMinR
                     qtdElementos={receitasPesquisadas.length}
                     limiteExibicoes={cardLimite}
                     tipoOperacao="voltar"
+                    tamanho="pequeno"
                 />
                 <BotaoPagina 
                     idMinExibido={idMinReceita}
@@ -32,6 +33,7 @@ function Pesquisa({receitas, receitasPesquisadas, setReceitasPesquisadas, idMinR
                     qtdElementos={receitasPesquisadas.length}
                     limiteExibicoes={cardLimite}
                     tipoOperacao="avancar"
+                    tamanho="pequeno"
                 />
             </div>
         </section>

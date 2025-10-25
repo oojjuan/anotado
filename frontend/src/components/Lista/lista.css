@@ -1,19 +1,29 @@
 .lista-etapas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
     width: 80%;
     min-height: 200px;
+    
+
+    &.tipo--ingredientes {
+        list-style-type: disc;        
+    }
+
+    &.tipo--etapas {
+        list-style-type: decimal;
+    }
+
+    .etapas-etapa {
+        font-size: 1.25rem;
+        font-family: var(--fonte-textos);
+        color: var(--cor-fonte-escura);
+        word-spacing: 2px;
+
+        &::marker {
+            font-size: 2rem;
+        }
+    }
 }
 
-.etapas-etapa {
-    font-size: 1.25rem;
-    font-family: var(--fonte-textos);
-    color: var(--cor-fonte-escura);
-    word-spacing: 2px;
-}
-
-.tipo--ingredientes {
-    list-style-type: disc;
-}
-
-.tipo--etapas {
-    list-style-type: decimal;
-}

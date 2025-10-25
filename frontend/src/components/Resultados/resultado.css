@@ -1,22 +1,22 @@
 /*<> Containers */
-.container-resultados--preenchido, .container-resultados--vazio {
+.container-resultados {
     width: 100%;
     height: 500px;
     margin: 25px 0 40px;
-}
 
-.container-resultados--preenchido {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    gap: 35px;
-}
+    &.preenchido {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        gap: 35px;
+    }
 
-.container-resultados--vazio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &.vazio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /*<> Resultados preenchidos */

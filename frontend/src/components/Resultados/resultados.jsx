@@ -5,7 +5,7 @@ import Titulo from '../Titulo/titulo.jsx'
 function Resultados({ listaResultado, minimoReceitasExibidas, cardLimite }) {
     if ( listaResultado !== 0) {
         return (
-        <div className='container-resultados--preenchido'>
+        <div className='container-resultados preenchido'>
             { listaResultado.slice(minimoReceitasExibidas, minimoReceitasExibidas + cardLimite).map( (receita, index) => (
                 <Link className='resultados-receita' to={`/receitas/${receita.id}`} key={index}>
                     <span className='receita-id'># {receita.id}</span>
@@ -23,7 +23,7 @@ function Resultados({ listaResultado, minimoReceitasExibidas, cardLimite }) {
     )
     } else {
         return (
-            <div className='container-resultados--vazio'>
+            <div className='container-resultados vazio'>
                 <Titulo
                     fonteTamanho="2.5"
                     fonteCor="escuro"

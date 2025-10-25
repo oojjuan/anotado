@@ -5,16 +5,22 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
+
+    .opcoes-opcao {
+        font-family: var(--fonte-titulo);
+        font-size: 2.25rem;
+        color: var(--cor-fonte-clara);
+        text-decoration: none;
+
+        p {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            transition: 0.25s ease-out;
+
+            &:hover {
+                text-shadow: rgba(213,206,163,0.9) 0px 0px 10px;
+            }
+        }
 }
 
-.opcoes-opcao {
-    font-family: var(--fonte-titulo);
-    font-size: 2.25rem;
-    color: var(--cor-fonte-clara);
-    text-decoration: none;
-}
-
-.opcoes-opcao p {
-    letter-spacing: 5px;
-    text-transform: uppercase;
 }
