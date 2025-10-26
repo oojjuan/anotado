@@ -37,10 +37,11 @@ function Receita() {
                     fonteFamilia="principal"
                     fonteFormatacao="maiuscula"
                     tipoTitulo="principal"
+                    className="info-titulo"
                 >{`${tituloLista} | (${index + 1}/${chavesLista.length})`}</Titulo>
             ,
             componenteInfo: 
-                <div className="container-info">
+                <div className="container-info info-componente">
                     <Titulo 
                         fonteTamanho="2.5"
                         fonteCor="escuro"
@@ -52,7 +53,6 @@ function Receita() {
                     
                     <Lista lista={etapa}/>
                 </div>
-            
         }))
 
         return etapasLista
@@ -83,10 +83,11 @@ function Receita() {
                     fonteFamilia="principal"
                     fonteFormatacao="maiuscula"
                     tipoTitulo="principal"
+                    className="info-titulo"
                 >{receita.nome}</Titulo>,
 
                 componenteInfo: 
-                    <div className="container-info">
+                    <div className="container-info info-componente">
                         <Titulo
                             fonteTamanho="2.5"
                             fonteCor="claro"

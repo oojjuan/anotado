@@ -11,3 +11,9 @@ export async function getReceita(id) {
 
     return response.data
 }
+
+export async function deleteReceita(id) {
+    const response = await apiReceitas.delete(`/${id}`)
+
+    return response.data
+}

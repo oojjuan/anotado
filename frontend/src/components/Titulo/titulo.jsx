@@ -18,7 +18,7 @@ function Titulo({ children, fonteTamanho, fonteCor, fontePeso, tipoTitulo, fonte
     const tiposTransform = {
         "maiuscula" : "uppercase",
         "minuscula": "lowercase",
-        "normal": "capitalize"
+        "normal": "none"
     }
 
     return (

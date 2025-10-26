@@ -1,10 +1,8 @@
 .caderno-receita {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-    gap: 80px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 2fr;
+    justify-items: center;
 
     min-width: 800px;
     width: 50%;
@@ -24,11 +22,26 @@
         &.tipo-n2 { background-image: url('../../imgs/fundoCard_Capa2.png') }
         &.tipo-n3 { background-image: url('../../imgs/fundoCard_Capa3.png') }
         &.tipo-n4 { background-image: url('../../imgs/fundoCard_Capa4.png') }
+
+        .info-titulo {
+            align-self: end;
+        }
+
+        .info-componente { 
+            align-self: center;
+        }
     }
 
     &.pagina {
         background-color: var(--cor-terciaria);
-        background-image: url('../../imgs/fundoCard_Pagina.png');
+        background-image: url('../../imgs/fundoCard_Pagina.png');  
         
+        .info-titulo {
+            align-self: end;
+        }
+
+        .info-componente { 
+            align-self: top;
+        }
     }
 }
