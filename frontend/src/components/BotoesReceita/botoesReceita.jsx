@@ -5,12 +5,12 @@ import PopUp from '../PopUp/popUp.jsx'
 import { deleteReceita } from '../../services/receitasData.js'
 
 function BotoesReceita({idReceita}) {
-    const [isVisivel, setIsVisivel] = useState(false)
     const navigate = useNavigate();
+    const [isVisivel, setIsVisivel] = useState(false)
     
     async function confirmarExclusao() {
         await deleteReceita(idReceita)
-        navigate('/inicio')
+        navigate('/receitas')
     }
 
     return (
@@ -25,6 +25,9 @@ function BotoesReceita({idReceita}) {
             />
             
             <Link className='botao-atualizar' to={`/atualizar/${idReceita}`}>Atualizar</Link>
+            {/*
+            //TODO: Fazer botão de favoritar a receita, que salva no sistema
+            */}
             <button
                 className='botao-deletar'
                 onClick={() => {setIsVisivel(true)}}

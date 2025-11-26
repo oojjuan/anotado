@@ -11,6 +11,8 @@ function BotaoPagina({idMinExibido, setIdMinExibido, qtdElementos, limiteExibico
             case "avancar":
                 idMinExibido + limiteExibicoes > qtdElementos - 1 ? booleanAtivado = true : booleanAtivado = false
                 break;
+            default:
+                break;
         }
         return booleanAtivado
     }
@@ -31,6 +33,9 @@ function BotaoPagina({idMinExibido, setIdMinExibido, qtdElementos, limiteExibico
                         if(idMinExibido + limiteExibicoes > qtdElementos - 1) { setIdMinExibido(qtdElementos - 1) }
                         //! Caso o contrário, retorna o próximo valor a ser exibido
                         else {setIdMinExibido(idMinExibido + limiteExibicoes)}
+                        break;
+                    default:
+                        break;
                 }
             }}
             disabled={desativado(tipoOperacao)}

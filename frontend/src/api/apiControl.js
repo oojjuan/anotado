@@ -5,6 +5,11 @@ export const apiReceitas = axios.create({
     timeout: 6000
 })
 
+export const apiCriar = axios.create({
+    baseURL: "http://localhost:5000/criar",
+    timeout: 6000
+})
+
 export const apiFavoritos = axios.create({
     baseURL: "http://localhost:5000/favoritos",
     timeout: 6000

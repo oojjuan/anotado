@@ -5,6 +5,7 @@ import Header from './components/Header/header.jsx';
 import Inicio from './routes/Inicio/Inicio.jsx';
 import Receitas from './routes/Receitas/Receitas.jsx';
 import Receita from './routes/Receitas/Receita.jsx';
+import Criar from './routes/Criar/Criar.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,7 +27,7 @@ root.render(
           
           <Route path='/favoritos' element={"Favoritos"}/>
 
-          <Route path='/criar' element={"Criar"}/>
+          <Route path='/criar' element={<Criar />}/>
         </Routes>
     </BrowserRouter>
 );
