@@ -21,8 +21,8 @@ root.render(
             <Route path=':idReceita' element={<Receita />}/>
           </Route>
 
-          <Route path='/atualizar'>
-            <Route path=':idReceita' element={"test"} />
+          <Route path='/editar'>
+            <Route path=':idReceita' element={<Criar />} />
           </Route>
           
           <Route path='/favoritos' element={"Favoritos"}/>

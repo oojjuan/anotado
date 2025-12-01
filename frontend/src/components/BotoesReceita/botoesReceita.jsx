@@ -24,7 +24,7 @@ function BotoesReceita({idReceita}) {
                 funcao={confirmarExclusao}
             />
             
-            <Link className='botao-atualizar' to={`/atualizar/${idReceita}`}>Atualizar</Link>
+            <Link className='botao-atualizar' to={`/editar/${idReceita}`}>Atualizar</Link>
             {/*
             //TODO: Fazer botão de favoritar a receita, que salva no sistema
             */}

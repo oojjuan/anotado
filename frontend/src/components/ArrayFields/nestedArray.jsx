@@ -1,7 +1,7 @@
 import { useFieldArray } from "react-hook-form"
 
 export default function Nested({ nestIndex, control, register, nomeLista, errors }) {
-    const keyLista = nomeLista === 'listaIngredientes' ? "ingredientes" : "etapa"
+    const keyLista = nomeLista === 'listaIngredientes' ? "ingredientes" : "etapas"
 
     const { fields, remove, append } = useFieldArray({
         control,
