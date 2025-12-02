@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-const path = './json/receitas.test.json'
+const path = './json/receitas.json'
 const receitas = JSON.parse(fs.readFileSync(path))
 
 export function validarReceitaId(idReceita) {

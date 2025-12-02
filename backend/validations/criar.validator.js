@@ -1,12 +1,10 @@
 import fs from 'fs'
 
-const path = "./json/receitas.test.json"
-let string = "string"
-let array = []
+const path = "./json/receitas.json"
 
-export function validarReceita(receita) {
+export function validarReceita(funcao, receita) {
     validarCategoria(receita.categoria)
-    validarNome(receita.nome)
+    validarNome(funcao, receita.nome)
     validarIngredientes(receita.listaIngredientes)
     validarPreparo(receita.modoPreparo)
 }
@@ -17,11 +15,11 @@ function validarCategoria(categoria) {
     }
 }
 
-function validarNome(nome) {
+function validarNome(modo, nome) {
     const receitas = JSON.parse(fs.readFileSync(path))
     
-    if (receitas != {}) {
-        const receitaEncontrada = receitas.some(receita => receita.nome.toLowerCase() ===nome.toLowerCase())
+    if (receitas != {} && modo !== "editar") {
+        const receitaEncontrada = receitas.some(receita => receita.nome.toLowerCase() === nome.toLowerCase())
         if (receitaEncontrada) {
             throw new Error('Receita já existe no sistema!')
         }  
@@ -39,12 +37,17 @@ function validarIngredientes(listaIngredientes) {
         }
 
         if (fase.preparo.trim().length < 2 || fase.preparo.trim().length > 15) {
-            console.log(fase.preparo.trim())
             throw new Error(`Quantidade de caractéres no campo 'preparo' n° ${index + 1} inválido!`)
         }
-
+        
         if (fase.ingredientes.length < 2 || fase.ingredientes.length > 15) {
             throw new Error(`Quantidade de ingredientes na lista n° ${index + 1} inválido!`)
+        } else {
+            fase.ingredientes.map((ingrediente, j) => {
+                if (ingrediente.length < 3 || ingrediente.length > 100 || ingrediente == null) {
+                    throw new Error(`Quantidade de caractéres do ingrediente n° ${j} é inválida!`)
+                }
+            })
         }
     })
 }
@@ -61,6 +64,12 @@ function validarPreparo(modoPreparo) {
 
         if (fase.etapas.length < 2 || fase.etapas.length > 15) {
             throw new Error(`Quantidade de etapas no passo a passo n° ${index + 1} inválido!`)
+        } else {
+            fase.etapas.map((etapa, j) => {
+                if (etapa.length < 5 || etapa.length > 200 || etapa == null) {
+                    throw new Error(`Quantidade de caractéres da etapa n° ${j} é inválida!`)
+                }
+            })
         }
     })
 }

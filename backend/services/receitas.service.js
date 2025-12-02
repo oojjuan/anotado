@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const path = "./json/receitas.test.json"
+const path = "./json/receitas.json"
 
 export function getTodasReceitas() {
     return JSON.parse(fs.readFileSync(path))

@@ -10,7 +10,7 @@ export default function formatarDados(data) {
 
         modoPreparo: data.modoPreparo.map(lista => ({
             preparo: lista.preparo,
-            etapas: lista.etapa.map(etapa => etapa.textos)
+            etapas: lista.etapas.map(etapa => etapa.textos)
         }))
     };
 }

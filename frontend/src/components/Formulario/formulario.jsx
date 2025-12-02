@@ -29,7 +29,7 @@ function Formulario({ modo }) {
                 fetchReceita()
             }
             
-        }, [idReceita, reset])
+        }, [idReceita, reset, modo])
 
     function estruturaForm(receita) {
         if (!receita) {
@@ -69,11 +69,10 @@ function Formulario({ modo }) {
         switch (modo) {
             case "criar":
                 postReceita(data)
-                navigate('/receitas')
+                navigate("/receitas")
                 break;
         
             case "editar":
-                console.log(data)
                 putReceita(receita.id, data)
                 navigate(`/receitas/${receita.id}`)
                 break;
