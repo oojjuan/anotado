@@ -1,9 +1,11 @@
 import fs from 'fs';
+import { carregarReceitas } from '../utils/carregarDados.js';
 
 const path = "./json/receitas.json"
 
 export function inserirReceita(receitaNova) {
-    const receitasAtuais = JSON.parse(fs.readFileSync(path))
+    const receitasAtuais = carregarReceitas()
+    
     //* Gera ID = 1 caso não há nenhuma receita ainda
     const ultimaReceita = receitasAtuais.length === 0 ? "1" : receitasAtuais[receitasAtuais.length - 1]
     const proxId = ultimaReceita === "1" ? ultimaReceita : (parseInt(ultimaReceita.id) + 1).toString()

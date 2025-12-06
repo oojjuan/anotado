@@ -1,7 +1,7 @@
 import fs from 'fs'
+import { carregarReceitas } from '../utils/carregarDados.js'
 
-const path = './json/receitas.json'
-const receitas = JSON.parse(fs.readFileSync(path))
+const receitas = carregarReceitas()
 
 export function validarReceitaId(idReceita) {
     if (idReceita === undefined || idReceita === null || idReceita === '') {

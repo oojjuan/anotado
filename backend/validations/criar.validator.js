@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { carregarReceitas } from '../utils/carregarDados.js'
 
 const path = "./json/receitas.json"
 
@@ -16,7 +17,7 @@ function validarCategoria(categoria) {
 }
 
 function validarNome(modo, nome) {
-    const receitas = JSON.parse(fs.readFileSync(path))
+    const receitas = carregarReceitas();
     
     if (receitas != {} && modo !== "editar") {
         const receitaEncontrada = receitas.some(receita => receita.nome.toLowerCase() === nome.toLowerCase())

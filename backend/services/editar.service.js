@@ -1,9 +1,10 @@
 import fs from "fs"
+import { carregarReceitas } from "../utils/carregarDados.js"
 
 const path = "./json/receitas.json"
 
 export function atualizarReceita(receitaId, receitaAtualizada) {
-    const receitasAtuais = JSON.parse(fs.readFileSync(path))
+    const receitasAtuais = carregarReceitas()
 
     const listaSemReceitaAntiga = receitasAtuais.filter(receita => receita.id !== receitaId)
 
