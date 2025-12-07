@@ -3,9 +3,9 @@ import { carregarReceitas } from '../utils/carregarDados.js'
 
 const path = "./json/receitas.json"
 
-export function validarReceita(funcao, receita) {
+export async function validarReceita(funcao, receita) {
     validarCategoria(receita.categoria)
-    validarNome(funcao, receita.nome)
+    await validarNome(funcao, receita.nome)
     validarIngredientes(receita.listaIngredientes)
     validarPreparo(receita.modoPreparo)
 }
@@ -16,10 +16,10 @@ function validarCategoria(categoria) {
     }
 }
 
-function validarNome(modo, nome) {
-    const receitas = carregarReceitas();
-    
+async function validarNome(modo, nome) {    
     if (receitas != {} && modo !== "editar") {
+        const receitas = await carregarReceitas();
+        
         const receitaEncontrada = receitas.some(receita => receita.nome.toLowerCase() === nome.toLowerCase())
         if (receitaEncontrada) {
             throw new Error('Receita já existe no sistema!')

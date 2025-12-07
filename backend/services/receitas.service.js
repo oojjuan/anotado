@@ -3,19 +3,19 @@ import { carregarReceitas } from "../utils/carregarDados.js";
 
 const path = "./json/receitas.json"
 
-export function getTodasReceitas() {
-    return carregarReceitas()
+export async function getTodasReceitas() {
+    return await carregarReceitas()
 }
 
-export function getReceitaPorId(id) {
-    const receitas = carregarReceitas()
+export async function getReceitaPorId(id) {
+    const receitas = await carregarReceitas()
     const receitaFiltrada = receitas.filter(receita => receita.id === id)[0]
 
     return receitaFiltrada
 }
 
-export function deletarReceita(id) {
-    const receitasAtuais = carregarReceitas()
+export async function deletarReceita(id) {
+    const receitasAtuais = await carregarReceitas()
     const indiceExcluido = receitasAtuais.findIndex(receita => receita.id === id)
 
     receitasAtuais.splice(indiceExcluido, 1)

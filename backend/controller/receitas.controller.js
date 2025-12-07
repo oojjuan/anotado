@@ -1,9 +1,9 @@
 import { deletarReceita, getReceitaPorId, getTodasReceitas } from '../services/receitas.service.js';
 import { validarReceitaId } from '../validations/receita.validator.js';
 
-export function getReceitas (req, res) {
+export async function getReceitas (req, res) {
     try {
-        const receitas = getTodasReceitas()
+        const receitas = await getTodasReceitas()
         res.status(200)
         res.send(receitas)
     } catch (error) {
@@ -11,11 +11,11 @@ export function getReceitas (req, res) {
     }
 }
 
-export function getReceita (req, res) {
+export async function getReceita (req, res) {
     try {
         const receitaId = req.params.id
         validarReceitaId(receitaId)
-        const receita = getReceitaPorId(receitaId)
+        const receita = await getReceitaPorId(receitaId)
         res.status(200)
         res.send(receita)
     } catch(error) {
@@ -23,11 +23,11 @@ export function getReceita (req, res) {
     }
 }
 
-export function deleteReceita (req, res) {
+export async function deleteReceita (req, res) {
     try {
         const receitaId = req.params.id
         validarReceitaId(receitaId)
-        deletarReceita(receitaId)
+        await deletarReceita(receitaId)
         res.status(200)
         res.send("Receita deletada com sucesso!")
     } catch (error) {

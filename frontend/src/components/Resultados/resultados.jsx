@@ -2,21 +2,21 @@ import { Link } from 'react-router-dom'
 import './resultado.css'
 import Titulo from '../Titulo/titulo.jsx'
 
-function Resultados({ listaResultado, minimoReceitasExibidas, cardLimite }) {
-    if ( listaResultado !== 0) {
+function Resultados({ listaResultado, minimoReceitasExibidas, cardLimite, tipo }) {
+    if ( listaResultado.length !== 0) {
         return (
         <div className='container-resultados preenchido'>
             { listaResultado.slice(minimoReceitasExibidas, minimoReceitasExibidas + cardLimite).map( (receita, index) => (
-                <Link className='resultados-receita' to={`/receitas/${receita.id}`} key={index}>
+                <Link className={`resultados-receita ${tipo}`} to={`/receitas/${receita.id}`} key={index}>
                     <span className='receita-id'># {receita.id}</span>
                     <Titulo
                         fonteTamanho="1.5"
-                        fonteCor="escuro"
+                        fonteCor={tipo !== "favoritos" ? "clara" : "escura"}
                         fontePeso="negrito"
                         fonteFamilia="texto"
                         fonteFormatacao="maiuscula"
                     >{receita.nome}</Titulo>
-                    <p className='receita-categoria'>{receita.categoria}</p>
+                    <p className={`receita-categoria ${tipo}`}>{receita.categoria}</p>
                 </Link>
             ))}
         </div>

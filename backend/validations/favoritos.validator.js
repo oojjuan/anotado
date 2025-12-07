@@ -1,8 +1,8 @@
 import fs from "fs";
-import { carregarFavoritos, carregarReceitas } from "../utils/carregarDados";
+import { carregarFavoritos, carregarReceitas } from "../utils/carregarDados.js";
 
-export function validarFavoritos(listaFavoritos) {
-    const receitas = carregarReceitas();
+export async function validarFavoritos(listaFavoritos) {
+    const receitas = await carregarReceitas();
     const idsFavoritosSet = new Set(listaFavoritos.map(favorito => favorito.id))
     
     const favoritosEncontrados = receitas.filter(receita => idsFavoritosSet.has(receita.id))
@@ -12,8 +12,8 @@ export function validarFavoritos(listaFavoritos) {
     }
 }
 
-export function favoritoRepetido(favorito) {
-    const favoritos = carregarFavoritos();
+export async function favoritoRepetido(favorito) {
+    const favoritos = await carregarFavoritos();
     const idsFavoritosSet = new Set(favoritos.map(favorito => favorito.id))
 
     if (idsFavoritosSet.has(favorito.id)) {

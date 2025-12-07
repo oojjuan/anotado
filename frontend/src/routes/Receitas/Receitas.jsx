@@ -3,23 +3,28 @@ import Pesquisa from '../../components/Pesquisa/pesquisa'
 import Titulo from '../../components/Titulo/titulo'
 import { getReceitas } from '../../services/receitasData.js'
 import './Receitas.css'
+import { getFavoritos } from '../../services/favoritosData.js'
 
-function Receitas() {
+function Receitas({ tipo }) {
     const [receitas, setReceitas] = useState([])
     const [receitasPesquisadas, setReceitasPesquisadas] = useState([])   
     const [idMinReceita, setIdMinReceita] = useState(0)
 
+
+    
     //* Buscar receitas
     useEffect( () => {
+        async function fetchReceitas() {
+            const receitasAPI = tipo !== "favoritos" ? await getReceitas() : await getFavoritos()
+            setReceitas(receitasAPI)
+            //* Exibe as receitas na página ao carregar
+            setReceitasPesquisadas(receitasAPI)
+        }
+        
         fetchReceitas()
-    }, [])
+    }, [tipo])
 
-    async function fetchReceitas() {
-        const receitasAPI = await getReceitas()
-        setReceitas(receitasAPI)
-        //* Exibe as receitas na página ao carregar
-        setReceitasPesquisadas(receitasAPI)
-    }
+    
     
     return (
         <main className='container-receitas'>
@@ -30,8 +35,9 @@ function Receitas() {
                 fonteFamilia="principal"
                 tipoTitulo="principal"
                 fonteFormatacao="maiuscula"
-            >Receitas</Titulo>
+            >{tipo !== "favoritos" ? "Receitas" : "Favoritos"}</Titulo>
             <Pesquisa
+                tipo={tipo}
                 receitas={receitas}
                 receitasPesquisadas={receitasPesquisadas}
                 setReceitasPesquisadas={setReceitasPesquisadas}

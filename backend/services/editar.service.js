@@ -3,8 +3,8 @@ import { carregarReceitas } from "../utils/carregarDados.js"
 
 const path = "./json/receitas.json"
 
-export function atualizarReceita(receitaId, receitaAtualizada) {
-    const receitasAtuais = carregarReceitas()
+export async function atualizarReceita(receitaId, receitaAtualizada) {
+    const receitasAtuais = await carregarReceitas()
 
     const listaSemReceitaAntiga = receitasAtuais.filter(receita => receita.id !== receitaId)
 

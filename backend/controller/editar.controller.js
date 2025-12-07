@@ -3,14 +3,14 @@ import { validarReceita } from "../validations/criar.validator.js"
 import { validarReceitaId } from "../validations/receita.validator.js"
 
 
-export function putReceita(req, res) {
+export async function putReceita(req, res) {
     try {
         const receitaId = req.params.id
-        validarReceitaId(receitaId)
+        await validarReceitaId(receitaId)
         const receitaAtualizada = req.body
 
-        validarReceita("editar", receitaAtualizada)
-        atualizarReceita(receitaId, receitaAtualizada)
+        await validarReceita("editar", receitaAtualizada)
+        await atualizarReceita(receitaId, receitaAtualizada)
         
         res.status(200)
         res.send(receitaAtualizada)

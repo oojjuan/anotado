@@ -3,7 +3,7 @@ import cors from "cors";
 import { router as rotaReceita } from "./routes/receitas.route.js"
 import { router as rotaCriar } from "./routes/criar.route.js"
 import { router as rotaEditar } from "./routes/editar.route.js"
-import { router as rotaFavorito } from "./routes/editar.route.js"
+import { router as rotaFavorito } from "./routes/favoritos.route.js"
 
 
 const app = express();

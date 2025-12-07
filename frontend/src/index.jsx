@@ -25,7 +25,7 @@ root.render(
             <Route path=':idReceita' element={<Criar />} />
           </Route>
           
-          <Route path='/favoritos' element={"Favoritos"}/>
+          <Route path='/favoritos' element={<Receitas tipo="favoritos" />}/>
 
           <Route path='/criar' element={<Criar />}/>
         </Routes>

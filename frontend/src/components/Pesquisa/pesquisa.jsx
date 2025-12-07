@@ -4,7 +4,7 @@ import Resultados from '../Resultados/resultados.jsx'
 import BotaoPagina from '../BotaoPagina/botaoPagina.jsx'
 import CampoBusca from '../CampoBusca/campoBusca.jsx'
 
-function Pesquisa({receitas, receitasPesquisadas, setReceitasPesquisadas, idMinReceita, setIdMinReceita}) {
+function Pesquisa({receitas, receitasPesquisadas, setReceitasPesquisadas, idMinReceita, setIdMinReceita, tipo}) {
     const cardLimite = 6
     
     return (
@@ -15,9 +15,9 @@ function Pesquisa({receitas, receitasPesquisadas, setReceitasPesquisadas, idMinR
                 fontePeso="negrito"
                 fonteFamilia="enfase"
                 fonteFormatacao="maiuscula"
-            >Digite o nome da receita que desejar!</Titulo>
+            >{tipo !== "favoritos" ? "Procure a receita que você quiser!" : "Procure pela sua receita favorita!"}</Titulo>
             <CampoBusca receitas={receitas} setReceitasPesquisada={setReceitasPesquisadas}/>
-            <Resultados listaResultado={receitasPesquisadas} minimoReceitasExibidas={idMinReceita} cardLimite={cardLimite}/>
+            <Resultados tipo={tipo} listaResultado={receitasPesquisadas} minimoReceitasExibidas={idMinReceita} cardLimite={cardLimite}/>
             <div className='container-botoes'>
                 <BotaoPagina 
                     idMinExibido={idMinReceita}

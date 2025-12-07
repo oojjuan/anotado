@@ -1,11 +1,11 @@
-import { adicionarFavorito, getTodosFavoritos } from "../services/favorito.service"
-import { favoritoRepetido, validarFavoritos } from "../validations/favoritos.validator"
+import { adicionarFavorito, getTodosFavoritos } from "../services/favorito.service.js"
+import { favoritoRepetido, validarFavoritos } from "../validations/favoritos.validator.js"
 
 
-export function getFavoritos(req, res) {
+export async function getFavoritos(req, res) {
     try {
-        const favoritos = getTodosFavoritos()
-        validarFavoritos(favoritos)
+        const favoritos = await getTodosFavoritos()
+        await validarFavoritos(favoritos)
         res.status(200)
         res.send(favoritos)
     } catch (error) {
@@ -13,11 +13,11 @@ export function getFavoritos(req, res) {
     }
 }
 
-export function postFavoritos(req, res) {
+export async function postFavoritos(req, res) {
     try {
         const novoFavorito = req.body
-        favoritoRepetido(novoFavorito)
-        adicionarFavorito(novoFavorito)
+        await favoritoRepetido(novoFavorito)
+        await adicionarFavorito(novoFavorito)
         res.status(201)
         res.send("Receita favoritada!")
     } catch (error) {

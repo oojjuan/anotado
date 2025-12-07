@@ -41,11 +41,23 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     box-sizing: border-box;
     transition: 0.35s;
+
+    &.favoritos {
+        background-image: url('../../imgs/fundoCard_PaginaFavorito.png');
+        background-color: var(--cor-primaria);
+
+        color: var(--cor-fonte-clara)
+    }
+
 }
 
 .resultados-receita:hover {
     background-color: #CAC07A;
     cursor: pointer;
+
+    &.favoritos {
+        background-color: #383029;
+    }
 }
 
 .receita-id {
@@ -70,4 +82,9 @@
     border-radius: 10px;
     width: fit-content;
     align-self: center;
+
+    &.favoritos {
+        background-color: var(--cor-terciaria);
+        color: var(--cor-fonte-escura)
+    }
 }

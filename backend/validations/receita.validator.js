@@ -1,9 +1,8 @@
-import fs from 'fs'
 import { carregarReceitas } from '../utils/carregarDados.js'
 
-const receitas = carregarReceitas()
-
-export function validarReceitaId(idReceita) {
+export async function validarReceitaId(idReceita) {
+    const receitas = await carregarReceitas()
+    
     if (idReceita === undefined || idReceita === null || idReceita === '') {
         throw new Error('O ID da receita não foi informado.')
     }
