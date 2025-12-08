@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getFavoritos, postFavoritos } from "../controller/favoritos.controller.js";
+import { deleteFavorito, getFavoritos, postFavoritos } from "../controller/favoritos.controller.js";
 
 export const router = Router()
 
@@ -7,4 +7,7 @@ export const router = Router()
 router.get('/', getFavoritos)
 
 //<> POST
-router.post('/:id', postFavoritos)
+router.post('/', postFavoritos)
+
+//<> DELETE
+router.delete('/:id', deleteFavorito)

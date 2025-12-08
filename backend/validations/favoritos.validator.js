@@ -1,4 +1,3 @@
-import fs from "fs";
 import { carregarFavoritos, carregarReceitas } from "../utils/carregarDados.js";
 
 export async function validarFavoritos(listaFavoritos) {
@@ -12,11 +11,17 @@ export async function validarFavoritos(listaFavoritos) {
     }
 }
 
-export async function favoritoRepetido(favorito) {
+export async function validarFavorito(favorito) {
     const favoritos = await carregarFavoritos();
     const idsFavoritosSet = new Set(favoritos.map(favorito => favorito.id))
 
-    if (idsFavoritosSet.has(favorito.id)) {
-        throw new Error("Receita já está inclusa entre os favoritos")
+    if (typeof favorito === 'object') {
+        if (idsFavoritosSet.has(favorito.id)) {
+            throw new Error("Receita já está inclusa entre os favoritos")
+        }
+    } else if (typeof favorito === 'number') {
+        if (!idsFavoritosSet.has(favorito)) {
+            throw new Error("Receita não está inclusa entre os favoritos")
+        }
     }
 }

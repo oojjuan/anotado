@@ -1,5 +1,5 @@
-import { adicionarFavorito, getTodosFavoritos } from "../services/favorito.service.js"
-import { favoritoRepetido, validarFavoritos } from "../validations/favoritos.validator.js"
+import { adicionarFavorito, getTodosFavoritos, removerFavorito } from "../services/favorito.service.js"
+import { validarFavorito, validarFavoritos } from "../validations/favoritos.validator.js"
 
 
 export async function getFavoritos(req, res) {
@@ -16,11 +16,23 @@ export async function getFavoritos(req, res) {
 export async function postFavoritos(req, res) {
     try {
         const novoFavorito = req.body
-        await favoritoRepetido(novoFavorito)
+        await validarFavorito(novoFavorito)
         await adicionarFavorito(novoFavorito)
         res.status(201)
         res.send("Receita favoritada!")
     } catch (error) {
         res.send(`Ops! Ocorreu um erro\n${error}`)
+    }
+}
+
+export async function deleteFavorito(req, res) {
+    try {
+        const idFavorito = req.params.id
+        await validarFavorito(idFavorito)
+        await removerFavorito(idFavorito)
+        res.status(200)
+        res.send("Receita deletada com sucesso")
+    } catch (error) {
+        res.send("Ops! Ocorreu um erro\n", error)
     }
 }

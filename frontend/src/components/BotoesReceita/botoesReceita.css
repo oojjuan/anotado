@@ -59,4 +59,31 @@
             box-shadow: 0 0 0 5px #912d2d5f;
         }
     }
+
+    .botao-favoritar {
+        min-width: 52px;
+        width: 40%;
+        height: 70%;
+        text-align: center;
+
+        color: #695e1c;
+        font-size: 1.5rem;
+        font-family: var(--fonte-textos);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+
+        transition: 0.2s ease-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #695e1c;
+            color: white;
+            box-shadow: 0 0 0 5px #695e1c5f;
+        }
+
+    }
 }

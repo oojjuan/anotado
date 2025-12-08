@@ -13,3 +13,12 @@ export async function adicionarFavorito(favorito) {
     favoritosAtuais.push(favorito)
     fs.writeFileSync(path, JSON.stringify(favoritosAtuais))
 }
+
+export async function removerFavorito(id) {
+    const favoritosAtuais = await carregarFavoritos()
+    const indiceExcluido = favoritosAtuais.findIndex(favorito => favorito.id === id)
+
+    favoritosAtuais.splice(indiceExcluido, 1)
+
+    fs.writeFileSync(path, JSON.stringify(favoritosAtuais))
+}

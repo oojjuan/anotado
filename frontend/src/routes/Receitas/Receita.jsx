@@ -57,8 +57,6 @@ function Receita() {
 
         return etapasLista
     }
-
-    //TODO: Fazer uma mensagem que é exibida quando o sistema não encontra a receita da URL
     
     //* Mensagem caso as informações da receita não carreguem a tempo
     if (!receita) {

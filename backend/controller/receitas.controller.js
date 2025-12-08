@@ -14,7 +14,7 @@ export async function getReceitas (req, res) {
 export async function getReceita (req, res) {
     try {
         const receitaId = req.params.id
-        validarReceitaId(receitaId)
+        await validarReceitaId(receitaId)
         const receita = await getReceitaPorId(receitaId)
         res.status(200)
         res.send(receita)
@@ -26,7 +26,7 @@ export async function getReceita (req, res) {
 export async function deleteReceita (req, res) {
     try {
         const receitaId = req.params.id
-        validarReceitaId(receitaId)
+        await validarReceitaId(receitaId)
         await deletarReceita(receitaId)
         res.status(200)
         res.send("Receita deletada com sucesso!")
