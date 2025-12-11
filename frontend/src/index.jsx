@@ -6,6 +6,7 @@ import Inicio from './routes/Inicio/Inicio.jsx';
 import Receitas from './routes/Receitas/Receitas.jsx';
 import Receita from './routes/Receitas/Receita.jsx';
 import Criar from './routes/Criar/Criar.jsx';
+import Footer from './components/Footer/footer.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,5 +30,6 @@ root.render(
 
           <Route path='/criar' element={<Criar />}/>
         </Routes>
+        <Footer />
     </BrowserRouter>
 );
