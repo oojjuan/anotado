@@ -5,12 +5,20 @@ const path = "./json/receitas.json"
 
 export async function inserirReceita(receitaNova) {
     const receitasAtuais = await carregarReceitas()
-    
-    //* Gera ID = 1 caso não há nenhuma receita ainda
-    const ultimaReceita = receitasAtuais.length === 0 ? "1" : receitasAtuais[receitasAtuais.length - 1]
-    const proxId = ultimaReceita === "1" ? ultimaReceita : (parseInt(ultimaReceita.id) + 1).toString()
+    const idsAtuais = receitasAtuais.map(receita => parseInt(receita.id))
+    let proxId
 
-    const receitaNovaComId = { id: proxId, ...receitaNova}
+    if (idsAtuais.length === 0) {
+        //* Gera ID = 1 caso não há nenhuma receita ainda
+        proxId = 1
+    } else {
+        const idMaisAlto = Math.max(...idsAtuais); 
+        proxId = idMaisAlto + 1;
+    }
+
+    const proxIdString = proxId.toString()
+
+    const receitaNovaComId = { id: proxIdString, ...receitaNova}
 
     receitasAtuais.push(receitaNovaComId)
     fs.writeFileSync(path, JSON.stringify(receitasAtuais)) 

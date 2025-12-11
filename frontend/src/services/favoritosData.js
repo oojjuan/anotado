@@ -7,9 +7,7 @@ export async function getFavoritos() {
 }
 
 export async function postFavoritos(data) {
-    console.log("Entrou no POST")
     const response = await apiFavoritos.post('/', data)
-    console.log("Postou a RECEITA")
     return response
 }
 

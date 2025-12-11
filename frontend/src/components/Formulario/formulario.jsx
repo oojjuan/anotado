@@ -69,12 +69,17 @@ function Formulario({ modo }) {
         switch (modo) {
             case "criar":
                 postReceita(data)
-                navigate("/receitas")
+                setTimeout(() => {
+                    navigate("/receitas")
+                }, 1500)
+                
                 break;
         
             case "editar":
                 putReceita(receita.id, data)
-                navigate(`/receitas/${receita.id}`)
+                setTimeout(() => {
+                    navigate(`/receitas/${receita.id}`)
+                }, 1000)
                 break;
         }
     }

@@ -1,7 +1,4 @@
-import fs from 'fs'
 import { carregarReceitas } from '../utils/carregarDados.js'
-
-const path = "./json/receitas.json"
 
 export async function validarReceita(funcao, receita) {
     validarCategoria(receita.categoria)
@@ -17,8 +14,8 @@ function validarCategoria(categoria) {
 }
 
 async function validarNome(modo, nome) {    
+    const receitas = await carregarReceitas();
     if (receitas != {} && modo !== "editar") {
-        const receitas = await carregarReceitas();
         
         const receitaEncontrada = receitas.some(receita => receita.nome.toLowerCase() === nome.toLowerCase())
         if (receitaEncontrada) {
