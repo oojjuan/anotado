@@ -2,7 +2,6 @@ import SecaoInicio from '../../components/SecaoInicio/secaoInicio'
 import Imagem1 from '../../imgs/Logo.png'
 import Imagem2 from '../../imgs/LivroReceita.png'
 import './Inicio.css'
-import Titulo from '../../components/Titulo/titulo'
 
 //<> Textos para as seções
 
@@ -14,7 +13,7 @@ const textoSecoes = [
     },
     {
         imgUrl: Imagem2,
-        titulo: "Como funciona?",
+        titulo: "Como usar?",
         texto: "O 'Anotado' é bem simples, basta você criar a sua receita na página de criação e voilà, fica salvo no sistema! Além disso, você pode modificar as receitas, caso tenha esquecido de algo, e também deletar ou favoritar as receitas que você mais gosta!"
     }
 ]
@@ -23,14 +22,7 @@ const textoSecoes = [
 function Inicio() {
     return (
         <main className="container-inicio">
-            <Titulo
-                fonteTamanho="2.25"
-                fonteCor="escuro"
-                fontePeso="fino"
-                fonteFamilia="principal"
-                tipoTitulo="principal"
-                fonteFormatacao="maiuscula"
-            >Início</Titulo>
+            <h1 className="cor-escuro peso-fino familia-principal formato-maiuscula tamanho-2-25">Início</h1>
             { textoSecoes.map( (secao, index) => (
                 <SecaoInicio key={index} direcao={(index % 2 === 0 ? 'normal' : 'reverso')} titulo={secao.titulo} texto={secao.texto} imgUrl={secao.imgUrl}/>
             )) }

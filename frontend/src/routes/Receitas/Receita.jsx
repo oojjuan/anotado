@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import { getReceita } from "../../services/receitasData"
 import { useEffect, useState } from "react"
-import Titulo from '../../components/Titulo/titulo.jsx'
 import './Receita.css'
 import Lista from "../../components/Lista/lista.jsx"
 import BotoesReceita from "../../components/BotoesReceita/botoesReceita.jsx"
@@ -30,26 +29,14 @@ function Receita() {
         
         const etapasLista = lista.map((etapa, index) => ({
             componenteTitulo: 
-                <Titulo 
-                    fonteTamanho="2.5"
-                    fonteCor="escuro"
-                    fontePeso="fino"
-                    fonteFamilia="principal"
-                    fonteFormatacao="maiuscula"
-                    tipoTitulo="principal"
-                    className="info-titulo"
-                >{`${tituloLista} | (${index + 1}/${chavesLista.length})`}</Titulo>
-            ,
+                <h2 
+                    className="info-titulo cor-escuro peso-fino familia-principal formato-maiuscula tamanho-2-5"
+                >{`${tituloLista} (${index + 1}/${chavesLista.length})`}</h2>,
             componenteInfo: 
                 <div className="container-info info-componente">
-                    <Titulo 
-                        fonteTamanho="2.5"
-                        fonteCor="escuro"
-                        fontePeso="fino"
-                        fonteFamilia="principal"
-                        fonteFormatacao="maiuscula"
-                        tipoTitulo="principal"
-                    >{etapa.preparo}</Titulo>
+                    <h2 
+                        className="cor-escuro peso-fino familia-principal formato-maiuscula tamanho-2-5"
+                    >{etapa.preparo}</h2>
                     
                     <Lista lista={etapa}/>
                 </div>
@@ -60,40 +47,21 @@ function Receita() {
     
     //* Mensagem caso as informações da receita não carreguem a tempo
     if (!receita) {
-        return <Titulo
-            fonteTamanho="3"
-            fonteCor="escuro"
-            fontePeso="fino"
-            fonteFamilia="principal"
-            fonteFormatacao="maiuscula"
-            tipoTitulo="principal"
-            className="mensagem-aguardo"
-        >Carregando receita...</Titulo>
+        return <h1 className="cor-escuro peso-fino familia-principal formato-maiuscula tamanho-3 mensagem-aguardo">Carregando receita...</h1>
     } 
     
     else {        
         const infoPaginas = [
             {
-                componenteTitulo: <Titulo 
-                    fonteTamanho="2.5"
-                    fonteCor="claro"
-                    fontePeso="fino"
-                    fonteFamilia="principal"
-                    fonteFormatacao="maiuscula"
-                    tipoTitulo="principal"
-                    className="info-titulo"
-                >{receita.nome}</Titulo>,
+                componenteTitulo: <h1 
+                    className="info-titulo cor-claro peso-fino familia-principal formato-maiuscula tamanho-2-5"
+                >{receita.nome}</h1>,
 
                 componenteInfo: 
                     <div className="container-info info-componente">
-                        <Titulo
-                            fonteTamanho="2.5"
-                            fonteCor="claro"
-                            fontePeso="fino"
-                            fonteFamilia="enfase"
-                            fonteFormatacao="maiuscula"
-                            className="info-categoria"
-                        >Receita de {receita.categoria}</Titulo>
+                        <h2
+                            className="info-categoria cor-claro peso-fino familia-enfase formato-maiuscula tamanho-2-5"
+                        >Receita de {receita.categoria}</h2>
 
                         <BotoesReceita idReceita={receita.id}/>
                     </div>
@@ -113,6 +81,7 @@ function Receita() {
                     limiteExibicoes={1}
                     tipoOperacao="voltar"
                     tamanho="grande"
+                    className="esquerdo receita-page"
                 />
 
                 <Pagina
@@ -128,6 +97,7 @@ function Receita() {
                     limiteExibicoes={1}
                     tipoOperacao="avancar"
                     tamanho="grande"
+                    className="direito receita-page"
                 />
             </main>
         )

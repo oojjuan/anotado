@@ -3,7 +3,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-self: center;
 
-    width: 100%;
+    width: 90%;
     height: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container-criar {
+        padding: 0 16px 24px;
+        justify-content: flex-start;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-criar {
+        padding: 0 10px 16px;
+        align-items: stretch;
+        height: auto;
+
+        >h1 {
+            text-align: center;
+        }
+    }
 }

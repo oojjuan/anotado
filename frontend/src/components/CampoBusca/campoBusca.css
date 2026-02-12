@@ -31,3 +31,34 @@
         letter-spacing: 2px;
     }
 }
+
+@media (max-width: 1024px) {
+    .pesquisa-campo {
+        width: 70%;
+        min-width: 300px;
+        height: 45px;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .pesquisa-campo::placeholder {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pesquisa-campo {
+        width: 80%;
+        min-width: unset;
+        height: 40px;
+        padding: 0 16px;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .pesquisa-campo::placeholder {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+}

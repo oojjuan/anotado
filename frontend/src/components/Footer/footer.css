@@ -9,4 +9,29 @@
     height: 150px;
     width: 100%;
     margin-top: 25px;
+
+    >h1 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        height: 120px;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        height: auto;
+        padding: 16px;
+        margin-top: 18px;
+        text-align: center;
+    }
+
+    .footer > * {
+        width: 100%;
+    }
 }

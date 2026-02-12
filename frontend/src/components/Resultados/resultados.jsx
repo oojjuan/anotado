@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import './resultado.css'
-import Titulo from '../Titulo/titulo.jsx'
 
 function Resultados({ listaResultado, minimoReceitasExibidas, cardLimite, tipo }) {
     if ( listaResultado.length !== 0) {
@@ -9,13 +8,7 @@ function Resultados({ listaResultado, minimoReceitasExibidas, cardLimite, tipo }
             { listaResultado.slice(minimoReceitasExibidas, minimoReceitasExibidas + cardLimite).map( (receita, index) => (
                 <Link className={`resultados-receita ${tipo}`} to={`/receitas/${receita.id}`} key={index}>
                     <span className='receita-id'># {receita.id}</span>
-                    <Titulo
-                        fonteTamanho="1.5"
-                        fonteCor={tipo !== "favoritos" ? "clara" : "escura"}
-                        fontePeso="negrito"
-                        fonteFamilia="texto"
-                        fonteFormatacao="maiuscula"
-                    >{receita.nome}</Titulo>
+                    <h2 className={`receita-nome peso-negrito familia-texto formato-maiuscula tamanho-1-5 ${tipo === "favoritos" ? "cor-claro" : "cor-escuro"}`}>{receita.nome}</h2>
                     <p className={`receita-categoria ${tipo}`}>{receita.categoria}</p>
                 </Link>
             ))}
@@ -24,15 +17,7 @@ function Resultados({ listaResultado, minimoReceitasExibidas, cardLimite, tipo }
     } else {
         return (
             <div className='container-resultados vazio'>
-                <Titulo
-                    fonteTamanho="2.5"
-                    fonteCor="escuro"
-                    fontePeso="negrito"
-                    fonteFamilia="enfase"
-                    fonteFormatacao="maiuscula"
-                >
-                    Nenhuma receita foi encontrada...
-                </Titulo>
+                <h2 className="cor-escuro peso-negrito familia-enfase formato-maiuscula tamanho-2-5">Nenhuma receita foi encontrada...</h2>
             </div>
         )
     }

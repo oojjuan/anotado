@@ -3,3 +3,18 @@
     flex-direction: column;
     align-items: center;  
 }
+
+@media (max-width: 1024px) {
+    .container-inicio {
+        padding: 0 24px;
+        box-sizing: border-box;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-inicio {
+        width: 100%;
+        padding: 0 12px;
+    }
+}

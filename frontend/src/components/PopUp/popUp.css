@@ -49,7 +49,8 @@
         height: 100px;       
 
         .botao-confirmar {
-            width: 200px;
+            padding: 10px 16px;
+            min-width: 160px;
             height: 50px;
             border: none;
             border-radius: 10px;
@@ -73,7 +74,8 @@
         }
 
         .botao-voltar {
-            width: 200px;
+            padding: 10px 16px;
+            min-width: 160px;
             height: 50px;
             border: none;
             border-radius: 10px;
@@ -96,4 +98,54 @@
         }
     }
 
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container-popup {
+        min-width: 400px;
+        min-height: 250px;
+        width: 65%;
+        height: auto;
+        padding: 18px 24px;
+
+        .popup-botoes {
+            width: 80%;
+            height: auto;
+            gap: 12px;
+
+            .botao-confirmar,
+            .botao-voltar {
+                min-width: 140px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .container-popup {
+        min-width: 0;
+        width: 90%;
+        height: auto;
+        padding: 16px 18px;
+        border-radius: 16px;
+
+        .popup-botoes {
+            width: 100%;
+            flex-direction: column;
+            height: auto;
+            gap: 12px;
+
+            .botao-confirmar,
+            .botao-voltar {
+                width: 100%;
+                min-width: 0;
+                height: 40px;
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+        }
+    }
 }

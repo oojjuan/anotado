@@ -1,5 +1,4 @@
 import './Criar.css'
-import Titulo from '../../components/Titulo/titulo.jsx'
 import Formulario from '../../components/Formulario/formulario.jsx'
 import { useParams } from 'react-router-dom'
 
@@ -8,14 +7,7 @@ function Criar() {
 
     return (
         <main className='container-criar'>
-            <Titulo
-                fonteTamanho="2.25"
-                fonteCor="escuro"
-                fontePeso="fino"
-                fonteFamilia="principal"
-                tipoTitulo="principal"
-                fonteFormatacao="maiuscula"
-            >{idReceita ? "Editar" : "Criar"}</Titulo>
+            <h1 className="cor-escuro peso-fino familia-principal formato-maiuscula tamanho-2-25">{idReceita ? "Editar" : "Criar"}</h1>
 
             <Formulario modo={idReceita ? "editar" : "criar"}/>
         </main>

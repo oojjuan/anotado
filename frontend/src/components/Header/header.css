@@ -18,3 +18,32 @@
         }
     }
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .header {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 100px;
+    }
+
+    .header .header-logo {
+        width: 150px;
+        bottom: 4px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .header {
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 80px;
+        justify-items: center;
+    }
+
+    .header .header-logo {
+        width: 160px;
+        justify-self: left;
+        margin-left: 16px;
+        bottom: 4px;
+    }
+}

@@ -2,21 +2,22 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
 
     width: 70%;
+    height: fit-content;
 
     .botao-atualizar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        min-width: 52px;
-        width: 25%;
-        height: 70%;
+        padding: 8px 12px;
+        flex: 1 1 28%;
+        height: auto;
+        width: 80%;
+        text-align: center;
 
         color: #2d6491;
         text-decoration: none;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-family: var(--fonte-textos);
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -35,13 +36,13 @@
     }
 
     .botao-deletar { 
-        min-width: 52px;
-        width: 25%;
-        height: 70%;
+        padding: 8px 12px;
+        flex: 1 1 28%;
+        height: auto;
         text-align: center;
         
         color: #912d2d;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-family: var(--fonte-textos);
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -61,13 +62,13 @@
     }
 
     .botao-favoritar {
-        min-width: 52px;
-        width: 40%;
-        height: 70%;
+        padding: 8px 12px;
+        flex: 1 1 38%;
+        height: auto;
         text-align: center;
 
         color: #695e1c;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-family: var(--fonte-textos);
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -85,5 +86,29 @@
             box-shadow: 0 0 0 5px #695e1c5f;
         }
 
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-botoes { width: 85%; }
+    .container-botoes .botao-atualizar,
+    .container-botoes .botao-deletar,
+    .container-botoes .botao-favoritar { font-size: 1.05rem; }
+}
+
+@media (max-width: 600px) {
+    .container-botoes {
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-botoes .botao-atualizar,
+    .container-botoes .botao-deletar,
+    .container-botoes .botao-favoritar {
+        width: 80%;
+        min-width: 0;
+        font-size: 1rem;
+        margin-bottom: 8px;
     }
 }

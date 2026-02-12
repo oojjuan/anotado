@@ -31,3 +31,133 @@ body {
   background-image: url('./imgs/fundoBody.png');
 }
 
+/* ===== Global Title Styles (Responsive Replacements for Titulo Component) ===== */
+
+h1, h2 {
+  margin: 25px 0;
+  font-family: var(--fonte-titulo);
+}
+
+/* H1 Default Styles */
+h1 {
+  font-weight: 300;
+  font-size: 2.25rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: var(--cor-fonte-escura);
+}
+
+/* H2 Default Styles */
+h2 {
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cor-fonte-escura);
+}
+
+/* Title Color Variants */
+h1.cor-escuro, h2.cor-escuro {
+  color: #311F15;
+}
+
+h1.cor-claro, h2.cor-claro {
+  color: #D5CEA3;
+}
+
+/* Title Weight Variants */
+h1.peso-fino, h2.peso-fino {
+  font-weight: 300;
+}
+
+h1.peso-normal, h2.peso-normal {
+  font-weight: 400;
+}
+
+h1.peso-negrito, h2.peso-negrito {
+  font-weight: 500;
+}
+
+/* Title Family Variants */
+h1.familia-principal, h2.familia-principal {
+  font-family: 'Alan Sans';
+}
+
+h1.familia-texto, h2.familia-texto {
+  font-family: 'Raleway';
+}
+
+h1.familia-enfase, h2.familia-enfase {
+  font-family: 'Inter';
+}
+
+/* Text Transform Variants */
+h1.formato-maiuscula, h2.formato-maiuscula {
+  text-transform: uppercase;
+}
+
+h1.formato-minuscula, h2.formato-minuscula {
+  text-transform: lowercase;
+}
+
+h1.formato-normal, h2.formato-normal {
+  text-transform: none;
+}
+
+/* Size Variants */
+h1.tamanho-1-2 { font-size: 1.2rem; }
+h1.tamanho-1-5 { font-size: 1.5rem; }
+h1.tamanho-2 { font-size: 2rem; }
+h1.tamanho-2-25 { font-size: 2.25rem; }
+h1.tamanho-2-5 { font-size: 2.5rem; }
+h1.tamanho-3 { font-size: 3rem; }
+
+h2.tamanho-1-2 { font-size: 1.2rem; }
+h2.tamanho-1-5 { font-size: 1.5rem; }
+h2.tamanho-2 { font-size: 2rem; }
+h2.tamanho-2-25 { font-size: 2.25rem; }
+h2.tamanho-2-5 { font-size: 2.5rem; }
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+
+  h1.tamanho-2-5 { font-size: 2rem; }
+  h1.tamanho-2-25 { font-size: 1.8rem; }
+  h1.tamanho-3 { font-size: 2.2rem; }
+  
+  h2.tamanho-2-5 { font-size: 1.8rem; }
+  h2.tamanho-2-25 { font-size: 1.6rem; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    margin: 16px 0;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 12px 0;
+  }
+
+  h1.tamanho-2-5 { font-size: 1.6rem; }
+  h1.tamanho-2-25 { font-size: 1.4rem; }
+  h1.tamanho-3 { font-size: 1.8rem; }
+  h1.tamanho-2 { font-size: 1.4rem; }
+  
+  h2.tamanho-2-5 { font-size: 1.4rem; }
+  h2.tamanho-2-25 { font-size: 1.2rem; }
+}
+

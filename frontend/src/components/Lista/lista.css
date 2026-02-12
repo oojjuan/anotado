@@ -27,3 +27,15 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .lista-etapas { width: 90%; gap: 8px; }
+    .lista-etapas .etapas-etapa { font-size: 1.1rem; }
+    .lista-etapas .etapas-etapa::marker { font-size: 1.6rem; }
+}
+
+@media (max-width: 600px) {
+    .lista-etapas { width: 95%; gap: 6px; min-height: 120px; }
+    .lista-etapas .etapas-etapa { font-size: 1rem; }
+    .lista-etapas .etapas-etapa::marker { font-size: 1.2rem; }
+}
+

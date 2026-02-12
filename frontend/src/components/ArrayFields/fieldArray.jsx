@@ -1,5 +1,4 @@
 import { useFieldArray } from "react-hook-form";
-import Titulo from '../Titulo/titulo.jsx'
 import Nested from "./nestedArray.jsx";
 
 export default function Fields({ control, register, errors, nomeLista}) {
@@ -10,14 +9,7 @@ export default function Fields({ control, register, errors, nomeLista}) {
 
     return (
         <aside className="container-listas--lista">
-            <Titulo
-                fonteTamanho="2"
-                fonteCor="escuro"
-                fontePeso="normal"
-                fonteFamilia="enfase"
-                fonteFormatacao="maiuscula"
-            >{nomeLista === 'listaIngredientes' ? "Lista de ingredientes" : "Modo de Preparo"}
-            </Titulo>
+            <h2 className="peso-normal familia-enfase formato-maiuscula tamanho-2 cor-escuro">{nomeLista === 'listaIngredientes' ? "Lista de ingredientes" : "Modo de Preparo"}</h2>
             
             {fields.map((elemento, index) => {
                 return (

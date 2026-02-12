@@ -1,8 +1,10 @@
 .container-receita {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    
+    margin: auto;
+    gap: 20px;
+
     width: 100%;
     height: 100%;
 }
@@ -13,10 +15,60 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 40%;
+    height: auto;
+}
+
+.info-titulo { 
+    font-size: 3rem; 
 }
 
 .info-categoria {
     word-spacing: 10px;
     letter-spacing: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container-receita {
+        gap: 6px;
+        align-items: center;
+    }
+
+    .container-info { padding: 8px 12px; }
+
+    .info-categoria { font-size: 1.6rem; letter-spacing: 4px; }
+
+    .info-titulo { font-size: 3rem; }
+}
+
+@media (max-width: 600px) {
+    /* ===== Layout Grid - Página Receita: botões lado a lado ===== */
+    .container-receita {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto;
+        grid-template-areas: "btn-voltar pagina btn-avancar";
+        align-items: center;
+        justify-items: center;
+        gap: 8px;
+    }
+
+    .container-receita > :nth-child(1) {
+        grid-area: btn-voltar;
+        justify-self: start;
+    }
+
+    .container-receita > :nth-child(2) {
+        grid-area: pagina;
+        justify-self: center;
+    }
+
+    .container-receita > :nth-child(3) {
+        grid-area: btn-avancar;
+        justify-self: end;
+    }
+
+    .container-info { padding: 6px 8px; }
+
+    .info-categoria { font-size: 1.2rem; letter-spacing: 3px; word-spacing: 4px; }
 }

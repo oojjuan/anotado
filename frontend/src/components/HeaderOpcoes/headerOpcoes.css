@@ -1,16 +1,26 @@
+.header-opcoes-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
 .header-opcoes {
     display: flex;
-    justify-content: space-between;
-    width: 800px;
+    justify-content: space-evenly;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
     list-style-type: none;
 
     .opcoes-opcao {
         font-family: var(--fonte-titulo);
-        font-size: 2.25rem;
+        font-size: 2rem;
         color: var(--cor-fonte-clara);
         text-decoration: none;
+        align-content: center;
 
         p {
             letter-spacing: 5px;
@@ -21,6 +31,84 @@
                 text-shadow: rgba(213,206,163,0.9) 0px 0px 10px;
             }
         }
+    }
 }
 
+/* Hamburger button (hidden on large screens) */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 32px;
+    padding: 4px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    height: 3px;
+    background: var(--cor-fonte-clara);
+    border-radius: 2px;
+}
+
+/* Tablet: reduce font-size and width */
+@media (max-width: 1024px) {
+    .header-opcoes {
+        width: 100%;
+        justify-content: space-around;  
+    }
+
+    .header-opcoes .opcoes-opcao {
+        font-size: 1.25rem;
+    }
+}
+
+/* Mobile: hide normal list, show hamburger; open state shows overlay menu */
+@media (max-width: 600px) {
+    .header-opcoes {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin: auto;
+    }
+
+    .header-opcoes.open {
+        display: flex;
+        position: absolute;
+        width: 180px;
+        height: auto;
+        top: 80px;
+        right: 0;
+
+        flex-direction: column;
+        padding: 12px;
+        gap: 8px;
+
+        background-color: var(--cor-primaria);
+        background-image: url('../../imgs/fundoPadrao.png');
+        
+        border-left: 3px solid var(--cor-primaria);
+        border-bottom: 3px solid var(--cor-primaria);
+        border-right: 3px solid var(--cor-primaria);
+
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        box-sizing: border-box;
+        z-index: 40;
+    }
+
+    .header-opcoes.open .opcoes-opcao {
+        display: block;
+        font-size: 1.25rem;
+        padding: 8px 6px;
+    }
+
+    .header-opcoes.open .opcoes-opcao p {
+        text-align: center;
+        letter-spacing: 3px;
+    }
 }

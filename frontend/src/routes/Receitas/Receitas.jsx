@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import Pesquisa from '../../components/Pesquisa/pesquisa'
-import Titulo from '../../components/Titulo/titulo'
 import { getReceitas } from '../../services/receitasData.js'
 import './Receitas.css'
 import { getFavoritos } from '../../services/favoritosData.js'
@@ -28,14 +27,7 @@ function Receitas({ tipo }) {
     
     return (
         <main className='container-receitas'>
-            <Titulo
-                fonteTamanho="2.25"
-                fonteCor="escuro"
-                fontePeso="fino"
-                fonteFamilia="principal"
-                tipoTitulo="principal"
-                fonteFormatacao="maiuscula"
-            >{tipo !== "favoritos" ? "Receitas" : "Favoritos"}</Titulo>
+            <h1 className="cor-escuro peso-fino familia-principal formato-maiuscula tamanho-2-25">{tipo !== "favoritos" ? "Receitas" : "Favoritos"}</h1>
             <Pesquisa
                 tipo={tipo}
                 receitas={receitas}

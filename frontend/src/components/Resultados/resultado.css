@@ -9,6 +9,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         align-items: center;
+        justify-items: center;
         gap: 35px;
     }
 
@@ -86,5 +87,54 @@
     &.favoritos {
         background-color: var(--cor-terciaria);
         color: var(--cor-fonte-escura)
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-resultados {
+        height: auto;
+        min-height: 600px;
+        margin: 20px 0 30px;
+    }
+
+    .container-resultados.preenchido {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 24px;
+    }
+
+    .resultados-receita {
+        padding: 8px;
+        border-radius: 16px;
+    }
+
+    .receita-id {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-resultados {
+        height: auto;
+        min-height: auto;
+        margin: 16px 0 20px;
+    }
+
+    .container-resultados.preenchido {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .resultados-receita {
+        height: auto;
+        min-height: 200px;
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid var(--cor-fonte-escura);
+    }
+
+    .receita-id {
+        font-size: 0.7rem;
     }
 }

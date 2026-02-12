@@ -6,7 +6,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { putReceita } from '../../services/editarData';
 import { getReceita } from '../../services/receitasData';
 import { useEffect, useState } from 'react';
-import Titulo from '../Titulo/titulo';
 
 function Formulario({ modo }) {
     const navigate = useNavigate();
@@ -85,15 +84,7 @@ function Formulario({ modo }) {
     }
 
     if (!receita && modo === "editar") {
-        return <Titulo
-            fonteTamanho="3"
-            fonteCor="escuro"
-            fontePeso="fino"
-            fonteFamilia="principal"
-            fonteFormatacao="maiuscula"
-            tipoTitulo="principal"
-            className="mensagem-aguardo"
-        >Carregando receita...</Titulo>
+        return <h2 className="cor-escuro peso-fino familia-principal formato-maiuscula tamanho-3 mensagem-aguardo">Carregando receita...</h2>
 
     } else {
         return (
